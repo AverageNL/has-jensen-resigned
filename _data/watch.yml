@@ -1,0 +1,17 @@
+# The “What to watch” tiles, in the order shown. Four fit on one row.
+
+- label: "11 Nov"
+  text: "Deadline to answer the House briefing request."
+  sources: [house-request]
+
+- label: "17 Nov"
+  text: "Nvidia reports quarterly earnings."
+  sources: [yahoo-gains]
+
+- label: "18 Nov"
+  text: "The briefing date Congress asked for."
+  sources: [house-request]
+
+- label: "December"
+  text: "Huang is still billed to keynote GTC in Washington."
+  sources: [the-national]

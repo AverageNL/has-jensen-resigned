@@ -1,0 +1,9 @@
+# The hand-set fallback for the verdict at the top of the page.
+# While resigned is false, the page also checks Wikidata live and updates the date itself.
+# Set resigned to true to force "Yes." regardless of what Wikidata says.
+
+resigned: false
+checked: 2026-11-11
+
+# Only shown when resigned is true:
+resigned_summary: "Jensen Huang is no longer Nvidia’s chief executive."

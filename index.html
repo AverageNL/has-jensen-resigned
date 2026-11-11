@@ -1,0 +1,371 @@
+---
+# This empty block tells Jekyll to process the file. Leave it in place.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Has Jensen Huang resigned?</title>
+<meta name="description" content="A live answer plus a short, sourced timeline of the Jensen Huang affair and the unproven Chinese-spy allegations.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%2376B900'/%3E%3C/svg%3E">
+
+<!-- Built by Jekyll on GitHub Pages. To update the page, edit the files in _data (see README.md). -->
+
+<style>
+  :root {
+    color-scheme: dark;
+    --green: #76B900;
+    --green-hi: #A4E82A;
+    --black: #000;
+    --panel: #0D100A;
+    --panel-2: #141810;
+    --line: #283020;
+    --text: #EEF1E8;
+    --muted: #9CA491;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --heavy: "Arial Black", "Segoe UI Black", "Helvetica Neue", Roboto, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 1rem; }
+  body {
+    margin: 0;
+    background: var(--black);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  a { color: inherit; text-decoration-color: var(--green); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+  a:hover { color: var(--green-hi); }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--green-hi); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Hero */
+  .hero { background: var(--green); color: #0E1408; padding: 2.5rem 0 2.75rem; }
+  .hero h1 { margin: 0; font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 600; }
+  .answer {
+    margin: 0 0 0 -0.04em;
+    font-family: var(--heavy);
+    font-weight: 900;
+    font-size: clamp(9rem, 40vw, 27rem);
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+  }
+  .summary { margin: 2rem 0 0; max-width: 32em; font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.45; }
+  .facts { display: flex; flex-wrap: wrap; gap: 1rem 3rem; margin: 2rem 0 0; padding-top: 1.1rem; border-top: 2px solid #0E1408; }
+  .facts dt { font-size: 0.85rem; }
+  .facts dd { margin: 0.1rem 0 0; font-weight: 700; }
+  .dot {
+    display: inline-block; width: 0.6em; height: 0.6em; margin-right: 0.45em;
+    background: currentColor; border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { opacity: 0.25; } }
+  @media (prefers-reduced-motion: reduce) { .dot { animation: none; } }
+
+  .status-yes .hero { background: #0E1408; color: var(--green); border-bottom: 1px solid var(--line); }
+  .status-yes .facts { border-top-color: var(--green); }
+
+  /* Notice */
+  .notice { border-bottom: 1px solid var(--line); background: var(--panel); }
+  .notice p { margin: 0; padding: 1rem 0 1rem 1rem; border-left: 3px solid var(--green); max-width: 52em; }
+  .notice .wrap { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+
+  /* Sections */
+  main section { padding-top: 4rem; }
+  h2 {
+    margin: 0 0 1.5rem;
+    font-family: var(--heavy);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  h2::after { content: ""; display: block; width: 3rem; height: 4px; margin-top: 0.7rem; background: var(--green); }
+
+  .cards { display: grid; gap: 1rem; }
+  .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .card { padding: 1.25rem; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+  .card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+  .card p { margin: 0; color: #D5D9CC; font-size: 0.98rem; }
+  .card-admitted { border-top: 4px solid var(--green); }
+  .card-alleged { border-top: 4px solid transparent; border-image: repeating-linear-gradient(90deg, var(--green) 0 10px, transparent 10px 18px) 4; border-image-width: 4px 0 0 0; border-top-style: solid; }
+  .card-denied { border-top: 4px solid #5E6654; }
+
+  .dates { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+  .dates li { padding: 1rem 1.25rem; background: var(--panel-2); border-left: 3px solid var(--green); border-radius: 0 6px 6px 0; font-size: 0.98rem; }
+  .dates time { display: block; font-family: var(--heavy); font-weight: 900; font-size: 1.35rem; color: var(--green); }
+
+  /* Tags */
+  .tag {
+    display: inline-block; margin-right: 0.4rem; padding: 0.05rem 0.5rem;
+    font-size: 0.72rem; font-weight: 700; line-height: 1.5; white-space: nowrap;
+    border: 1.5px solid var(--green); border-radius: 3px; vertical-align: 0.1em;
+  }
+  .tag-record { background: var(--green); color: #0E1408; }
+  .tag-reported { color: var(--green-hi); }
+  .tag-denied { border-color: #7C8570; border-style: dashed; color: #C4CAB8; }
+  .legend { list-style: none; margin: 0 0 2.25rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; color: var(--muted); font-size: 0.92rem; }
+
+  /* Timeline */
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; max-width: 50rem; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 0.5rem; bottom: 0; width: 2px; background: linear-gradient(var(--green), var(--line) 85%); }
+  .entry { position: relative; padding: 0 0 2rem 2.75rem; }
+  .entry::before {
+    content: ""; position: absolute; left: 0; top: 0.3rem; width: 16px; height: 16px;
+    background: var(--black); border: 2px solid var(--green); border-radius: 3px;
+  }
+  .entry.latest::before { background: var(--green); box-shadow: 0 0 0 5px rgba(118,185,0,0.22); }
+  .entry time { font-size: 0.88rem; font-weight: 700; color: var(--green); }
+  .entry h3 { margin: 0.1rem 0 0.6rem; font-size: 1.25rem; line-height: 1.25; }
+  .entry ul { list-style: none; margin: 0; padding: 0; }
+  .entry ul li { margin: 0 0 0.55rem; color: #D5D9CC; }
+
+  details.more { max-width: 50rem; margin-left: 2.75rem; }
+  details.more summary {
+    display: inline-block; cursor: pointer; padding: 0.55rem 1rem;
+    border: 1px solid var(--green); border-radius: 4px; font-weight: 600; list-style: none;
+  }
+  details.more summary::-webkit-details-marker { display: none; }
+  details.more summary::before { content: "+ "; color: var(--green); }
+  details.more[open] summary::before { content: "− "; }
+  details.more summary:hover { background: rgba(118,185,0,0.12); }
+  details.more ul { list-style: none; margin: 1.25rem 0 0; padding: 0; }
+  details.more li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding: 0.7rem 0; border-top: 1px solid var(--line); color: #D5D9CC; }
+  details.more li b { color: var(--green); }
+
+  .ref { font-size: 0.75rem; white-space: nowrap; }
+  .ref a { text-decoration: none; color: var(--green-hi); padding: 0 0.1em; }
+  .ref a:hover { text-decoration: underline; }
+
+  /* Sources */
+  .sources { margin: 0; padding-left: 1.5rem; columns: 2; column-gap: 3rem; font-size: 0.9rem; color: var(--muted); }
+  .sources li { margin: 0 0 0.5rem; padding: 0.1rem 0.3rem; break-inside: avoid; overflow-wrap: anywhere; }
+  .sources li:target { background: rgba(118,185,0,0.2); color: var(--text); }
+
+  footer { margin-top: 4rem; padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
+  footer p { margin: 0 0 0.5rem; max-width: 52em; }
+
+  @media (max-width: 60rem) {
+    .cards-4, .dates { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards-3 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 36rem) {
+    .cards-4, .dates { grid-template-columns: 1fr; }
+    .sources { columns: 1; }
+    details.more { margin-left: 0; }
+    details.more li { grid-template-columns: 1fr; gap: 0.1rem; }
+  }
+</style>
+</head>
+
+<body class="{% if site.data.status.resigned %}status-yes{% else %}status-no{% endif %}">
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Has Jensen Huang resigned?</h1>
+    <p class="answer" id="answer">{% if site.data.status.resigned %}Yes.{% else %}No.{% endif %}</p>
+    {% assign checked = site.data.status.checked | date: "%-d %B %Y" %}
+    <p class="summary" id="summary">{% if site.data.status.resigned %}{{ site.data.status.resigned_summary }}{% else %}As of <span id="asof">{{ checked }}</span>, Jensen Huang is still running Nvidia as Chief Executive.{% endif %}</p>
+    <dl class="facts">
+      <div><dt>Role</dt><dd id="role">{% if site.data.status.resigned %}No longer CEO{% else %}President and CEO, since 1993{% endif %}</dd></div>
+      <div><dt>Admitted the affair</dt><dd id="admitted">8 November 2026</dd></div>
+      <div><dt>Verdict</dt><dd><span class="dot" aria-hidden="true"></span><span id="checked">Set by hand, {{ checked }}</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<aside class="notice" aria-label="Disclaimer">
+  <div class="wrap">
+    <p><strong>The affair is admitted. The spy part is not proven.</strong> It comes from US intelligence assessments reported in the press, and the investigations are still open.</p>
+  </div>
+</aside>
+
+<main class="wrap">
+
+  <section id="short">
+    <h2>The short version</h2>
+    <div class="cards cards-3">
+      <div class="card card-admitted">
+        <h3>Admitted</h3>
+        <p>Huang told Nvidia staff he was unfaithful to his wife. He named no one; the press identifies Alice Huang (no relation), an executive tied to big Nvidia customer Megaspeed.{% assign k = "nvidia-memo,newsweek" | split: "," %}{% include refs.html keys=k %}</p>
+      </div>
+      <div class="card card-alleged">
+        <h3>Alleged</h3>
+        <p>US intelligence believes China’s Ministry of State Security recruited her to get close to him, according to the New York Times. No evidence is public and nobody is charged.{% assign k = "nyt-nov6,newsweek" | split: "," %}{% include refs.html keys=k %}</p>
+      </div>
+      <div class="card card-denied">
+        <h3>Denied</h3>
+        <p>China calls it a smear. Huang says he had no idea she might be a spy. The board’s public statement says it has no reason to think secrets leaked.{% assign k = "newsweek,nvidia-board" | split: "," %}{% include refs.html keys=k %}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="probes">
+    <h2>Who is looking into it</h2>
+    <div class="cards cards-4">
+      <div class="card"><h3>Nvidia’s board</h3><p>Independent directors with outside lawyers, reportedly Wachtell Lipton.{% assign k = "nvidia-board,fox-live" | split: "," %}{% include refs.html keys=k %}</p></div>
+      <div class="card"><h3>Congress</h3><p>Three House chairmen want a closed-door briefing and are threatening a subpoena.{% assign k = "house-request,yahoo-gains" | split: "," %}{% include refs.html keys=k %}</p></div>
+      <div class="card"><h3>The FBI</h3><p>President Trump says the bureau is “looking into it.”{% assign k = "yahoo-live" | split: "," %}{% include refs.html keys=k %}</p></div>
+      <div class="card"><h3>Shareholders</h3><p>A proposed class action says the risk should have been disclosed.{% assign k = "yahoo-gains" | split: "," %}{% include refs.html keys=k %}</p></div>
+    </div>
+  </section>
+
+  <section id="next">
+    <h2>What to watch</h2>
+    <ul class="dates">
+      {% for d in site.data.watch %}
+      <li><time>{{ d.label }}</time>{{ d.text }}{% include refs.html keys=d.sources %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="timeline">
+    <h2>Timeline</h2>
+
+    <ul class="legend">
+      <li><span class="tag tag-record">On the record</span> Checkable statement or event</li>
+      <li><span class="tag tag-reported">Reported</span> Unnamed sources, not proven</li>
+      <li><span class="tag tag-denied">Denied</span> Rebuttal from those involved</li>
+    </ul>
+
+    <ol class="timeline">
+      {% for e in site.data.timeline %}
+      <li class="entry{% if forloop.first %} latest{% endif %}">
+        <time datetime="{{ e.date | date: "%Y-%m-%d" }}">{% if e.label %}{{ e.label }}{% else %}{{ e.date | date: "%-d %B %Y" }}{% endif %}</time>
+        <h3>{{ e.headline }}</h3>
+        <ul>
+          {% for item in e.points %}
+          <li><span class="tag tag-{{ item.tag }}">{% case item.tag %}{% when "record" %}On the record{% when "reported" %}Reported{% when "denied" %}Denied{% endcase %}</span> {{ item.text }}{% include refs.html keys=item.sources %}</li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ol>
+
+    <details class="more">
+      <summary>How it got here, 2023 to mid-2026</summary>
+      <ul>
+        {% for b in site.data.background %}
+        <li><b>{{ b.label }}</b><span>{{ b.text }}{% include refs.html keys=b.sources %}</span></li>
+        {% endfor %}
+      </ul>
+    </details>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+    <ol class="sources">
+      {% for s in site.data.sources %}
+      <li id="src-{{ s.id }}">{{ s.publisher }}, <a href="{{ s.url }}">{{ s.title }}</a>{% if s.date %}, {{ s.date }}{% endif %}.{% if s.note %} {{ s.note }}{% endif %}</li>
+      {% endfor %}
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>The verdict is checked against <a href="https://www.wikidata.org/wiki/Q182477#P169">Wikidata’s entry for Nvidia’s chief executive</a> each time the page loads. Wikidata is volunteer-edited, so it can lag or be wrong. The timeline is updated by hand.</p>
+    <p>An independent summary of public reporting. Not affiliated with Nvidia.</p>
+  </div>
+</footer>
+
+<script>
+/*
+  Automatic verdict. This is the only script on the page.
+
+  What it does: makes one request to Wikidata's public API, asking for Nvidia's
+  "chief executive officer" entries. If Jensen Huang's entry has no end date,
+  the verdict stays "No" and the "As of" date becomes today. If it has an end
+  date, the verdict flips to "Yes".
+  It also counts the days since the admission on 8 November 2026.
+
+  What it does not do: no cookies, no storage, no tracking, no other requests.
+  It only ever writes plain text into the verdict and the status card.
+
+  If the request fails or the data looks unexpected, the hand-written verdict
+  in the HTML is left alone and the status card says the check failed.
+*/
+(function () {
+  var NVIDIA = "Q182477";      // https://www.wikidata.org/wiki/Q182477
+  var HUANG = "Q305177";       // https://www.wikidata.org/wiki/Q305177
+  var CEO = "P169";            // "chief executive officer"
+  var END_TIME = "P582";       // "end time" qualifier
+
+  var answer = document.getElementById("answer");
+  var summary = document.getElementById("summary");
+  var role = document.getElementById("role");
+  var checked = document.getElementById("checked");
+  var asof = document.getElementById("asof");
+  var handSet = checked.textContent;
+
+  // Day counter: whole days since 8 November 2026 (UTC).
+  var days = Math.floor((Date.now() - Date.UTC(2026, 10, 8)) / 86400000);
+  if (days >= 1) {
+    document.getElementById("admitted").textContent =
+      "8 November 2026, " + days + (days === 1 ? " day ago" : " days ago");
+  }
+
+  // If the verdict was set to "Yes" by hand in _data/status.yml, leave it alone.
+  if (document.body.className === "status-yes") { return; }
+
+  var url = "https://www.wikidata.org/w/api.php?action=wbgetclaims" +
+            "&entity=" + NVIDIA + "&property=" + CEO + "&format=json&origin=*";
+
+  fetch(url)
+    .then(function (response) {
+      if (!response.ok) { throw new Error("HTTP " + response.status); }
+      return response.json();
+    })
+    .then(function (data) {
+      var entries = (data.claims && data.claims[CEO]) || [];
+
+      // Keep only the entries that point at Jensen Huang.
+      var his = entries.filter(function (entry) {
+        var value = entry.mainsnak && entry.mainsnak.datavalue && entry.mainsnak.datavalue.value;
+        return entry.rank !== "deprecated" && value && value.id === HUANG;
+      });
+      if (his.length === 0) { throw new Error("No entry for Huang found"); }
+
+      // Still CEO if at least one of his entries has no end date.
+      var stillCeo = his.some(function (entry) {
+        return !(entry.qualifiers && entry.qualifiers[END_TIME]);
+      });
+
+      checked.textContent = "Live from Wikidata, checked just now";
+      if (stillCeo) {
+        document.body.className = "status-no";
+        answer.textContent = "No.";
+        // Put today's date in "As of ...", e.g. "12 November 2026".
+        if (asof) {
+          asof.textContent = new Date().toLocaleDateString("en-GB",
+            { day: "numeric", month: "long", year: "numeric" });
+        }
+        return;
+      }
+
+      // Read the end date, e.g. "+2026-11-20T00:00:00Z" becomes "2026-11-20".
+      var end = his[0].qualifiers[END_TIME][0];
+      var time = end.datavalue && end.datavalue.value && end.datavalue.value.time;
+      var date = time ? time.slice(1, 11).replace(/-00/g, "") : "an unrecorded date";
+
+      document.body.className = "status-yes";
+      answer.textContent = "Yes.";
+      role.textContent = "No longer CEO, per Wikidata";
+      summary.textContent = "Wikidata records his time as Nvidia’s chief executive as ending on " +
+                            date + ". Check the news for whether he resigned or was removed; " +
+                            "the timeline below may not have caught up yet.";
+    })
+    .catch(function () {
+      checked.textContent = handSet + " (live check failed)";
+    });
+})();
+</script>
+
+</body>
+</html>

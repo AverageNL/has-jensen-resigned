@@ -1,0 +1,62 @@
+# The timeline, newest entry first. The top entry gets the highlighted marker.
+# tag is one of: record (on the record), reported (unnamed sources), denied (a rebuttal).
+# sources are ids from sources.yml. Keep text inside double quotes.
+
+- date: 2026-11-11
+  headline: "Deadline day on Capitol Hill"
+  points:
+    - tag: record
+      text: "Huang must accept the House briefing or offer another date. Rep. Brian Mast says a subpoena is next."
+      sources: [house-request, yahoo-gains]
+
+- date: 2026-11-10
+  headline: "Nvidia’s 2026 stock gains are gone"
+  points:
+    - tag: record
+      text: "Shares trade near $167, erasing the year’s rise."
+      sources: [yahoo-gains]
+    - tag: reported
+      text: "The Information says companies tied to Alice Huang helped Chinese firms get about $7.5 billion of Nvidia chips. One named company denies any dealings with her."
+      sources: [the-information, yahoo-live]
+
+- date: 2026-11-09
+  headline: "The FBI, Beijing and the lawyers weigh in"
+  points:
+    - tag: record
+      text: "Trump says the FBI is involved and that he believes Huang. Shareholders sue."
+      sources: [yahoo-live, yahoo-gains]
+    - tag: denied
+      text: "China’s Foreign Ministry calls the spy claim unsubstantiated."
+      sources: [newsweek]
+
+- date: 2026-11-08
+  headline: "Huang admits the affair"
+  points:
+    - tag: record
+      text: "“I was unfaithful to my wife,” he writes to staff, adding that he will stay on."
+      sources: [nvidia-memo]
+    - tag: record
+      text: "The board opens an independent investigation and, in its statement, expresses confidence in him. Trump says he should keep the job."
+      sources: [nvidia-board, stanford-daily]
+
+- date: 2026-11-06
+  label: "5–6 November 2026"
+  headline: "The spy agency is named"
+  points:
+    - tag: reported
+      text: "The New York Times says US intelligence tied Alice Huang to China’s Ministry of State Security. The Financial Times says officials believed the relationship was romantic."
+      sources: [nyt-nov6, business-standard]
+    - tag: record
+      text: "A day earlier, three House chairmen ask Huang for a closed-door briefing."
+      sources: [house-request]
+
+- date: 2026-10-29
+  label: "29–30 October 2026"
+  headline: "The story breaks"
+  points:
+    - tag: reported
+      text: "The New York Times says US agencies see Alice Huang as an asset passing information to Beijing who had grown close to Huang."
+      sources: [nyt-oct29, newsweek]
+    - tag: denied
+      text: "Huang tells Bloomberg their dealings were “all completely normal and not unusual.”"
+      sources: [newsweek]
