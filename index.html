@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Has Jensen Huang resigned?</title>
+<meta name="description" content="Yes. Jensen Huang resigned as Nvidia CEO on 12 November 2026. Who runs Nvidia now, and who ran it before.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%2376B900'/%3E%3C/svg%3E">
+
+<!--
+  HOW THIS PAGE WORKS
+
+  The HTML below is a complete, correct page on its own (as of 12 November 2026).
+  The script at the bottom then asks Wikidata for Nvidia's list of chief executives
+  and redraws the answer and the CEO list if anything has changed, for example when
+  the board names a permanent CEO. If that check fails, the HTML stays as it is.
+
+  To update by hand: edit the answer and the two CEO lists below.
+-->
+
+<style>
+  :root {
+    color-scheme: dark;
+    --green: #76B900;
+    --ink: #0E1408;
+    --black: #000;
+    --line: #22281B;
+    --text: #EEF1E8;
+    --muted: #8E9683;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --heavy: "Arial Black", "Segoe UI Black", "Helvetica Neue", Roboto, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--black); color: var(--text); font-family: var(--sans); font-size: 1.0625rem; line-height: 1.5; }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+  .wrap { max-width: 52rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  .hero { background: var(--green); color: var(--ink); padding: 2.25rem 0 2.5rem; }
+  .hero h1 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+  .answer {
+    margin: 0.25rem 0 0 -0.04em; font-family: var(--heavy); font-weight: 900;
+    font-size: clamp(7rem, 30vw, 17rem); line-height: 0.85; letter-spacing: -0.06em;
+  }
+  .summary { margin: 1.25rem 0 0; font-size: 1.1rem; }
+
+  main.wrap { margin-top: 3rem; }
+  h2 { margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .ceos { list-style: none; margin: 0 0 2.75rem; padding: 0; border-top: 1px solid var(--line); }
+  .ceos li { display: flex; justify-content: space-between; align-items: baseline; gap: 0.25rem 1.5rem; flex-wrap: wrap; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+  .ceos .who { font-size: 1.15rem; font-weight: 600; }
+  .ceos .role { margin-left: 0.6rem; font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+  .ceos .when { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .current { border-top: 0; }
+  .current li { padding: 1.35rem 1.25rem; background: rgba(118,185,0,0.08); border-bottom: 0; border-left: 3px solid var(--green); border-radius: 0 4px 4px 0; }
+  .current .who { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.01em; }
+  .current .when { color: var(--green); }
+
+  footer { margin-top: 0; padding: 0 0 2.5rem; color: var(--muted); font-size: 0.85rem; }
+  footer p { margin: 0; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Has Jensen Huang resigned?</h1>
+    <p class="answer" id="answer">Yes.</p>
+    <p class="summary" id="summary">He stepped down as Nvidia’s CEO on 12 November 2026.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Current CEO</h2>
+  <ul class="ceos current" id="current">
+    <li><span class="who">Colette Kress<span class="role">Interim</span></span><span class="when">Since 12 November 2026</span></li>
+  </ul>
+
+  <h2>Past CEOs</h2>
+  <ul class="ceos" id="past">
+    <li><span class="who">Jensen Huang<span class="role">Co-founder</span></span><span class="when">1993 – 12 November 2026</span></li>
+  </ul>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p id="checked">Updated from Wikidata</p>
+  </div>
+</footer>
+
+<script>
+/*
+  Live CEO list. This is the only script on the page.
+
+  1. Asks Wikidata for Nvidia's "chief executive officer" entries (who, from when, until when).
+  2. Asks Wikidata for those people's names.
+  3. Redraws the answer, the current CEO and the past CEOs.
+
+  It makes two requests to wikidata.org and nothing else: no cookies, no storage,
+  no tracking. It only writes plain text into the page. If anything goes wrong or
+  the data looks incomplete, the hand-written HTML above is left untouched.
+*/
+(function () {
+  var NVIDIA = "Q182477";   // Nvidia on Wikidata
+  var HUANG = "Q305177";    // Jensen Huang on Wikidata
+  var API = "https://www.wikidata.org/w/api.php?format=json&origin=*";
+
+  // Notes Wikidata doesn't hold. Keyed by the person's English name on Wikidata.
+  var NOTES = {
+    "Colette Kress": "Interim",
+    "Jensen Huang": "Co-founder"
+  };
+  var MONTHS = ["January","February","March","April","May","June","July",
+                "August","September","October","November","December"];
+
+  // Wikidata dates look like "+2026-11-12T00:00:00Z", with a precision:
+  // 11 = day, 10 = month, 9 = year.
+  function readDate(qualifiers, property) {
+    var q = qualifiers && qualifiers[property] && qualifiers[property][0];
+    var v = q && q.datavalue && q.datavalue.value;
+    if (!v || !v.time) { return null; }
+    var parts = v.time.slice(1, 11).split("-");
+    return { sort: v.time.slice(1, 11), year: +parts[0], month: +parts[1], day: +parts[2], precision: v.precision };
+  }
+  function showDate(d) {
+    if (!d) { return "?"; }
+    if (d.precision >= 11 && d.day) { return d.day + " " + MONTHS[d.month - 1] + " " + d.year; }
+    if (d.precision === 10 && d.month) { return MONTHS[d.month - 1] + " " + d.year; }
+    return String(d.year);
+  }
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) { node.className = className; }
+    if (text) { node.textContent = text; }
+    return node;
+  }
+
+  fetch(API + "&action=wbgetclaims&entity=" + NVIDIA + "&property=P169")
+    .then(function (r) { if (!r.ok) { throw new Error("HTTP " + r.status); } return r.json(); })
+    .then(function (data) {
+      var ceos = ((data.claims && data.claims.P169) || [])
+        .filter(function (c) { return c.rank !== "deprecated"; })
+        .map(function (c) {
+          var v = c.mainsnak && c.mainsnak.datavalue && c.mainsnak.datavalue.value;
+          return v && v.id ? { id: v.id, start: readDate(c.qualifiers, "P580"), end: readDate(c.qualifiers, "P582") } : null;
+        })
+        .filter(Boolean);
+      if (ceos.length === 0) { throw new Error("No CEO entries"); }
+
+      var ids = ceos.map(function (c) { return c.id; }).join("|");
+      return fetch(API + "&action=wbgetentities&props=labels&languages=en&ids=" + ids)
+        .then(function (r) { return r.json(); })
+        .then(function (names) {
+          ceos.forEach(function (c) {
+            var e = names.entities && names.entities[c.id];
+            c.name = (e && e.labels && e.labels.en && e.labels.en.value) || c.id;
+          });
+          return ceos;
+        });
+    })
+    .then(function (ceos) {
+      // Current CEOs have no end date. If there is more than one (Wikidata not
+      // fully updated yet), the one who started most recently counts as current.
+      var current = ceos.filter(function (c) { return !c.end; })
+        .sort(function (a, b) { return (b.start ? b.start.sort : "") < (a.start ? a.start.sort : "") ? -1 : 1; })[0];
+      if (!current) { throw new Error("No current CEO recorded"); }
+
+      // Someone listed without an end date who isn't current (Wikidata half-updated)
+      // is shown as having served until the current CEO started.
+      ceos.forEach(function (c) { if (c !== current && !c.end) { c.end = current.start; } });
+
+      // If an editor removed Huang's entry instead of closing it, keep him in the list.
+      var hasHuang = ceos.some(function (c) { return c.id === HUANG; });
+      if (!hasHuang) {
+        ceos.push({ id: HUANG, name: "Jensen Huang",
+                    start: { sort: "1993", year: 1993, precision: 9 },
+                    end: { sort: "2026-11-12", year: 2026, month: 11, day: 12, precision: 11 } });
+      }
+
+      var past = ceos.filter(function (c) { return c !== current; })
+        .sort(function (a, b) {
+          var ka = (a.end || a.start || {}).sort || "", kb = (b.end || b.start || {}).sort || "";
+          return kb < ka ? -1 : 1;
+        });
+
+      // The answer: "No." only if Jensen Huang is the current CEO.
+      var stillCeo = current.id === HUANG;
+      document.getElementById("answer").textContent = stillCeo ? "No." : "Yes.";
+      if (stillCeo) {
+        document.getElementById("summary").textContent = "According to Wikidata, he is still Nvidia’s CEO.";
+      }
+
+      // Current CEO, then everyone before, most recent first.
+      function row(c, isCurrent) {
+        var li = el("li");
+        var who = el("span", "who", c.name);
+        if (NOTES[c.name]) { who.appendChild(el("span", "role", NOTES[c.name])); }
+        li.appendChild(who);
+        var when = isCurrent
+          ? (c.start ? "Since " + showDate(c.start) : "Current")
+          : showDate(c.start) + " – " + showDate(c.end);
+        li.appendChild(el("span", "when", when));
+        return li;
+      }
+      var currentList = document.getElementById("current");
+      currentList.textContent = "";
+      currentList.appendChild(row(current, true));
+
+      var pastList = document.getElementById("past");
+      pastList.textContent = "";
+      past.forEach(function (c) { pastList.appendChild(row(c, false)); });
+
+      document.getElementById("checked").textContent = "Live from Wikidata";
+    })
+    .catch(function () {
+      document.getElementById("checked").textContent = "Live check unavailable, showing the list as of 12 November 2026";
+    });
+})();
+</script>
+
+</body>
+</html>
